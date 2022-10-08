@@ -1,3 +1,10 @@
+"""
+[1 2 3]
+Res -> (2^n ->  2^3  ->   8)
+
+[1 2 3 4]
+Res -> (2^n ->  2^4  ->   16)
+"""
 def getCombinationsRec(ar):
     if len(ar) == 0:
         return [[]]
