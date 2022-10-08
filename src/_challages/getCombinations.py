@@ -5,6 +5,8 @@ Res -> (2^n ->  2^3  ->   8)
 [1 2 3 4]
 Res -> (2^n ->  2^4  ->   16)
 """
+
+
 def getCombinationsRec(ar):
     if len(ar) == 0:
         return [[]]
@@ -30,6 +32,35 @@ def getCombinationsRec(ar):
 
 r = getCombinationsRec(list("ABC"))
 print("combination.py:: getCombinationsRec -> ", len(r), r if len(r) else "")
+
+
+def getCombinations(li, arr=False):
+    pass
+    res = [[]]
+
+    # Array combinations
+    if arr:
+        for item in li:
+            copy = [*res]
+            for prefix in copy:
+                res.append([*prefix, *item])
+        return res
+
+    # String combinations
+    for item in li:
+        copy = [*res]
+        for prefix in copy:
+            # print(f"index.py::19 item {[*prefix, *item]} {[*item]}")
+            res.append([''.join(map(str, [*prefix, item]))])
+
+    print(len(res))
+    return res
+
+
+r = getCombinations(list("ABC"))
+print("combination.py:: getCombinations -> ", len(r), r if len(r) else "")
+
+
 # for c in r:
 #     print("El:",c)
 
