@@ -9,7 +9,7 @@
   "references": [
     "https://github.com/trekhleb/javascript-algorithms",
     "https://github.com/akueisara/hackerrank",
-    "git@github.com:RyanFehr/HackerRank.git",
+    "https://github.com/RyanFehr/HackerRank",
     "https://github.com/codePerfectPlus/AlgorithmsAndDataStructure",
     "https://github.com/prabhupant/python-ds/tree/master/data_structures/array",
     ""
