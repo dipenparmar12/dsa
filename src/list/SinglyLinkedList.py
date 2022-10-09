@@ -1,72 +1,40 @@
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+class ListNode:
+    def __init__(self, val, _next=None):
+        self.val = val
+        self.next = _next
 
 
-class SinglyLinkList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-        self.len = 0
+class SinglyLinkedList:
+    head = None
 
-    def push(self, data):
+    def __str__(self):
+        output = ''
+        current = self.head
+        while current.next:
+            output +=  str(current.val) + ' -> '
+            current = current.next
+
+        output += str(current.val)
+        return output
+
+    def push(self, val):
         if self.head is None:
-            self.head = Node(data)
-        else:
-            cur = self.head
-            while cur.next is not None:
-                cur = cur.next
-            cur.next = Node(data)
-        self.len += 1
-        # while True:
-        #     if cur.next is None: break
-        #     cur = cur.next
-        # cur.next = Node(data)
-        return self
+            self.head = ListNode(val)
+            return self.head
 
-    # Not Working append method 
-    def append(self, data):
-        if self.head is None:
-            self.head = Node(data)
-        else:
-            self.tail = self.tail.next = Node(data)
-        self.len += 1
-        return self
+        current = self.head
+        while current.next:  # is not None
+            current = current.next
 
-    def pop(self):
-        if self.head is not None:
-            
-            pass
-        return self
-        pass
+        current.next = ListNode(val)
 
 
-    def print_list(self):
-        cur = self.head
-        if cur is not None:
-            print(cur.data)
-            while cur.next is not None:
-                cur = cur.next
-                print(cur.data)
-        else:
-            print("List is Empty")
+sl = SinglyLinkedList()
 
+sl.push(1)
+sl.push(22)
+sl.push(3)
+sl.push(44)
+sl.push(55)
 
-# list_one = SinglyLinkList()
-# list_one.push(1)
-# list_one.push(2)
-# list_one.push(3)
-# list_one.push(4)
-
-list_two = SinglyLinkList()
-list_two.push(11)
-list_two.push(22)
-# list_two.append(33)
-list_two.push(44)
-list_two.push(13)
-list_two.push(14).pop()
-list_two.push(15)
-list_two.append(16)
-
-list_two.print_list()
+print(f"SinglyList.py::37 sl: ", sl)
