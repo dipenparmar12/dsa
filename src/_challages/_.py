@@ -1,13 +1,17 @@
 """
-Definition: [URL]
-[String]
+@src: [URL]
+@Difficulty: EASY/MEDIUM/HARD
  
+
+[String]
+
 --- Example 1:
 
 --- Example 2:
 
-
 --- Example 3:
+
+@Score: 
 
 """
 

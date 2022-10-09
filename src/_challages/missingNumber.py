@@ -20,10 +20,17 @@ Input: nums = [9,6,4,2,3,5,7,0,1]
 Output: 8
 Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
 
-
+1st
 Runtime: 304 ms, faster than 39.79% of Python3 online submissions for Missing Number.
 Memory Usage: 15.3 MB, less than 41.89% of Python3 online submissions for Missing Number.
-
+-
+2nd
+Runtime: 208 ms, faster than 71.13% of Python3 online submissions for Missing Number.
+Memory Usage: 15.3 MB, less than 41.89% of Python3 online submissions for Missing Number.
+-
+3rd 
+Runtime: 132 ms, faster than 98.32% of Python3 online submissions for Missing Number.
+Memory Usage: 15.4 MB, less than 20.77% of Python3 online submissions for Missing Number.
 
 6   1 2 3
 10   1 2 3 4
@@ -39,11 +46,17 @@ def sumOf(n):
 
 
 def missingNumber(nums):
-    _sum = 0
-    for num in nums:
-        _sum += num
-    return int(sumOf(len(nums)) - _sum)
-    # return int(((len(nums) * (len(nums) + 1)) / 2) - _sum)
+    expected_sum = len(nums)*(len(nums)+1)//2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
+
+# def missingNumber(nums):
+#     return ((len(nums) * (len(nums) + 1)) // 2) - sum(nums)
+#     _sum = 0
+#     for num in nums:
+#         _sum += num
+#     return int(sumOf(len(nums)) - _sum)
+#     # return int(((len(nums) * (len(nums) + 1)) / 2) - _sum)
 
 
 print(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
