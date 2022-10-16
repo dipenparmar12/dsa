@@ -16,7 +16,7 @@ Example 2:
 Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
- 
+
 
 @Score:
 
@@ -26,55 +26,7 @@ import unittest
 
 
 class Solution:
-    def maxProfit1(self, prices: list[int]) -> int:
-        if len(prices) <= 1:
-            return 0
-        buy = prices[0]
-        profit = 0
-        day = 0
-
-        for i in range(0, len(prices) - 1):
-            today = prices[i]
-            if buy > today:
-                buy = today
-                day = i
-
-        print(f"LOG1: ", buy, profit, day, prices)
-
-        for i in range(day, len(prices)):
-            salePriceToday = prices[i]
-            profitToday = salePriceToday - buy
-            if profit < profitToday:
-                profit = profitToday
-
-        # print(f"LOG2: ", buy, profit, day, prices)
-
-        return profit
-
-    def maxProfit2(self, prices: list[int]) -> int:
-        print(f"main.py::50 prices", prices)
-        if len(prices) <= 1:
-            return 0
-        buy = prices[0]
-        sale = 0
-        profit = 0
-        day = 0
-
-        for i in range(0, len(prices) - 1):
-            today = prices[i]
-            if buy > today:
-                buy = today
-                day = i
-
-        for j in range(day + 1, len(prices)):
-            futurePrice = prices[j]
-            if profit < futurePrice - buy:
-                profit = futurePrice - buy
-
-        print(day, buy, sale, profit, prices)
-        return profit if profit > 0 else 0
-
-    def maxProfit(self, prices: list[int]) -> int:
+    def maxProfitBruteForce(self, prices: list[int]) -> int:
         if len(prices) <= 1:
             return 0
         # print(len(prices))
@@ -89,24 +41,63 @@ class Solution:
 
         return maxProfit
 
+    def maxProfit1(self, prices: list[int]) -> int:
+        if len(prices) <= 1:
+            return 0
+
+        mxIdx = len(prices) - 1
+        mxVal = 0
+
+        for i in range(0, len(prices)):
+            if prices[i] > prices[mxIdx]:
+                if i != 0:
+                    mxIdx = i
+
+        mxVal = prices[mxIdx]
+        minVal = mxVal
+
+        for num in prices[:mxIdx]:
+            if num < minVal:
+                minVal = num
+
+        print(f"minVal:{minVal}, mxVal:{mxVal}, {prices}")
+        profit = mxVal - minVal
+        print("profit:", profit)
+
+        return profit if profit > 0 else 0
+        # [3, 3, 5, 0, 0, 3, 1, 4]
+
+    def maxProfit(self, prices: list[int]) -> int:
+        pass
+        # [3, 3, 5, 0, 0, 3, 1, 4]
+
 
 que = Solution()
 
 
+# # Driver Code
+# print(list(reversed(createList(-1, 1000))))
+
 class TestMaxProfit(unittest.TestCase):
-    def testCase(self):
+    def testCase0(self):
         userInput = [2, 4, 1]
-        output = 2
-        msg = f"Should be {output} Got: {que.maxProfit(userInput)}"
-        self.assertEqual(que.maxProfit(userInput), output, msg)
+        expected = 2
+        msg = f"Should be {expected} Got: {que.maxProfit(userInput)}"
+        self.assertEqual(que.maxProfit(userInput), expected, msg)
 
     def testCase1(self):
         userInput = [2, 1, 2, 1, 0, 1, 2]
-        output = 2
-        msg = f"Should be {output} Got: {que.maxProfit(userInput)}"
-        self.assertEqual(que.maxProfit(userInput), output, msg)
+        expected = 2
+        msg = f"Should be {expected} Got: {que.maxProfit(userInput)}"
+        self.assertEqual(que.maxProfit(userInput), expected, msg)
 
-    def testCases(self):
+    def testCase11(self):
+        userInput = [3, 3, 5, 0, 0, 3, 1, 4]
+        expected = 4
+        msg = f"Should be {expected} Got: {que.maxProfit(userInput)}"
+        self.assertEqual(que.maxProfit(userInput), expected, msg)
+
+    def testCase2(self):
         self.assertEqual(que.maxProfit([7, 1, 5, 3, 6, 4]), 5, "Should be 5")
         self.assertEqual(que.maxProfit([7, 6, 4, 3, 1]), 0, "Should be 0")
         self.assertEqual(que.maxProfit([1]), 0, "Should be 0")
@@ -114,16 +105,35 @@ class TestMaxProfit(unittest.TestCase):
         self.assertEqual(que.maxProfit([6, 14, 10]), 8, "Should be 8")
         self.assertEqual(que.maxProfit([3, 2, 6, 5, 0, 3]), 4, "Should be 4")
 
-    def testCaseLarge(self):
-        file = open("testCases.txt", "r")
-        file.seek(0)
-        userInput = list(file.readline().strip().split(','))
-        # print(userInput)
-        file.close()
-        output = 10000
-        msg = f"Should be {output} Got: {que.maxProfit(userInput)}"
-        self.assertEqual(que.maxProfit(userInput), output, msg)
-        print("DONE ")
+    # def createList(self, r1, r2):
+    #     if (r1 == r2):
+    #         return r1
+    #     else:
+    #         res = []
+    #         while (r1 < r2 + 1):
+    #             res.append(r1)
+    #             r1 += 1
+    #         return res
+
+    # def testCasesLarge(self):
+    #     userInput = list(reversed(self.createList(-1, 1000))) + [0,0,0,0,0]
+    #     expected = 3
+    #     msg = f"Should be {expected} Got: {que.maxProfit(userInput)}"
+    #     self.assertEqual(que.maxProfit(userInput), expected, msg)
+    #
+    # def testCaseFile(self):
+    #     file = open("testCases.txt", "r")
+    #     file.seek(0)
+    #     userInput = list(file.readline().strip().split(','))
+    #     # print(userInput)
+    #     file.close()
+    #     expected = 10000
+    #     msg = f"Should be {expected} Got: {que.maxProfit(userInput)}"
+    #     self.assertEqual(que.maxProfit(userInput), expected, msg)
 
 
 unittest.main()
+
+# que.maxProfit([2, 3, 4, 5, 6, 3, 1])
+# que.maxProfit([3, 2, 6, 5, 0, 3])
+# que.maxProfit([7, 1, 5, 3, 6, 4])
