@@ -13,4 +13,5 @@
 
  - `Js,React,Python tip/snippets` https://github.com/30-seconds/30-seconds-of-code
  - `Awesome-Selfhosted`: https://github.com/awesome-selfhosted/awesome-selfhosted
+ - `LeetCode Solutions`: https://github.com/MarloDelatorre/leetcode
  - `LeetCode TestCases`: https://github.com/MarloDelatorre/leetcode  

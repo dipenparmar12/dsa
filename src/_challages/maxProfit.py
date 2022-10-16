@@ -28,6 +28,7 @@ Total: 6 Hours, using  Hint
 
 
 """
+import sys
 import unittest
 
 
@@ -36,7 +37,7 @@ class Solution:
         profit = 0
         i = 0
         j = 1
-        while i < len(prices) and j < len(prices):
+        while j < len(prices):
             # print(i, j, prices[j], prices[i], prices, )
             diff = prices[j] - prices[i]
             if diff > profit:
@@ -50,6 +51,19 @@ class Solution:
                 j += 1
         # print(f"main.py::87 i,j,profit,prices", i, j, profit, prices)
         return profit
+
+    def maxProfit_Internet(self, prices: list[int]) -> int:
+        m = 0
+        low = sys.maxsize
+
+        for v in prices:
+            if low > v:
+                low = v
+
+            if v-low > m:
+                m = v - low
+
+        return m
 
     def maxProfitBruteForce(self, prices: list[int]) -> int:
         if len(prices) <= 1:
