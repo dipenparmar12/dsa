@@ -157,7 +157,7 @@ class TestMaxProfit(unittest.TestCase):
     #     self.assertEqual(que.maxProfit(userInput), expected, msg)
     #
     # def testCaseFile(self):
-    #     file = open("testCases.txt", "r")
+    #     file = open("maxProfit-testCase.txt", "r")
     #     file.seek(0)
     #     userInput = list(file.readline().strip().split(','))
     #     # print(userInput)
