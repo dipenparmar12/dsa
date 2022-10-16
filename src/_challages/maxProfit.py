@@ -19,13 +19,38 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
 
 @Score:
+Runtime: 1097 ms, faster than 92.64% of Python3 online submissions for Best Time to Buy and Sell Stock.
+Memory Usage: 25 MB, less than 85.23% of Python3 online submissions for Best Time to Buy and Sell Stock.
 
 Attempt-1: 3 Hours
+Attempt-2: 3 Hours
+Total: 6 Hours, using  Hint 
+
+
 """
 import unittest
 
 
 class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        profit = 0
+        i = 0
+        j = 1
+        while i < len(prices) and j < len(prices):
+            # print(i, j, prices[j], prices[i], prices, )
+            diff = prices[j] - prices[i]
+            if diff > profit:
+                profit = diff
+
+            if prices[j] > prices[i]:
+                j += 1
+            elif prices[j] < prices[i]:
+                i += 1
+            elif prices[j] == prices[i]:
+                j += 1
+        # print(f"main.py::87 i,j,profit,prices", i, j, profit, prices)
+        return profit
+
     def maxProfitBruteForce(self, prices: list[int]) -> int:
         if len(prices) <= 1:
             return 0
@@ -41,35 +66,31 @@ class Solution:
 
         return maxProfit
 
-    def maxProfit1(self, prices: list[int]) -> int:
-        if len(prices) <= 1:
-            return 0
+    # def maxProfit1(self, prices: list[int]) -> int:
+    #     if len(prices) <= 1:
+    #         return 0
 
-        mxIdx = len(prices) - 1
-        mxVal = 0
+    #     mxIdx = len(prices) - 1
+    #     mxVal = 0
 
-        for i in range(0, len(prices)):
-            if prices[i] > prices[mxIdx]:
-                if i != 0:
-                    mxIdx = i
+    #     for i in range(0, len(prices)):
+    #         if prices[i] > prices[mxIdx]:
+    #             if i != 0:
+    #                 mxIdx = i
 
-        mxVal = prices[mxIdx]
-        minVal = mxVal
+    #     mxVal = prices[mxIdx]
+    #     minVal = mxVal
 
-        for num in prices[:mxIdx]:
-            if num < minVal:
-                minVal = num
+    #     for num in prices[:mxIdx]:
+    #         if num < minVal:
+    #             minVal = num
 
-        print(f"minVal:{minVal}, mxVal:{mxVal}, {prices}")
-        profit = mxVal - minVal
-        print("profit:", profit)
+    #     print(f"minVal:{minVal}, mxVal:{mxVal}, {prices}")
+    #     profit = mxVal - minVal
+    #     print("profit:", profit)
 
-        return profit if profit > 0 else 0
-        # [3, 3, 5, 0, 0, 3, 1, 4]
-
-    def maxProfit(self, prices: list[int]) -> int:
-        pass
-        # [3, 3, 5, 0, 0, 3, 1, 4]
+    #     return profit if profit > 0 else 0
+    #     # [3, 3, 5, 0, 0, 3, 1, 4]
 
 
 que = Solution()
