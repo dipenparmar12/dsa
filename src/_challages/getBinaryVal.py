@@ -44,6 +44,17 @@ import unittest
 
 class Solution:
 
+    def getBinaryRecursive(self, n):
+        if n < 0:
+            return []
+        if n == 1:
+            return [1]
+        return [*self.getBinaryRecursive(n // 2), n % 2]
+        # res = [n % 2]
+        # rest = self.countBits(n // 2)
+        # res = [*rest, *res]
+        # return res
+
     def getBinary(self, n):
         res = []
         while 0 < n:
