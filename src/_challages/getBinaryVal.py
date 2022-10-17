@@ -43,7 +43,17 @@ import unittest
 
 
 class Solution:
+
     def getBinary(self, n):
+        res = []
+        while 0 < n:
+            remainder = n % 2
+            n = n // 2
+            res.append(remainder)
+        print(res)
+        return res
+
+    def getBinaryMySolution(self, n):
         pass
         bTable = [1]
         temp = 1
