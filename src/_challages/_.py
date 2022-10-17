@@ -3,7 +3,8 @@
 @src: [URL]
 @Difficulty: EASY/MEDIUM/HARD
 
-[String]
+@Definition:
+
 
 --- Example 1:
 --- Example 2:
@@ -13,10 +14,7 @@
 
 """
 
-import os
 import unittest
-
-os.system('clear')
 
 
 class Solution:
