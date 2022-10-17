@@ -44,7 +44,7 @@ import unittest
 
 class Solution:
 
-    def getBinaryRecursive(self, n):
+    def getBinaryRecursiveMySolution(self, n):
         if n < 0:
             return []
         if n == 1:
