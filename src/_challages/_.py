@@ -2,59 +2,43 @@
 @title: [TITLE]
 @src: [URL]
 @Difficulty: EASY/MEDIUM/HARD
- 
 
 [String]
 
 --- Example 1:
-
 --- Example 2:
-
 --- Example 3:
 
-@Score: 
+@Score:
 
 """
 
 import os
+import unittest
+
 os.system('clear')
 
 
-"""
+class Solution:
+    def funName(self, n):
+        pass
 
 
-"""
+que = Solution()
 
 
-def funcName(input):
-    print(input)
-    pass
+class TestProgram(unittest.TestCase):
+    def testCase0(self):
+        userInput = [2, 4, 1]
+        expected = 2
+        msg = f"Should be {expected} Got: {que.funName(userInput)}"
+        self.assertEqual(que.funName(userInput), expected, msg)
+
+    def testCase2(self):
+        self.assertEqual(que.funName(5), 5, "Should be 5")
 
 
-funcName(123)  #
-funcName(123)  #
-funcName(123)  #
-
-
-# import unittest
-
-
-# def testMethod(input):
-#     return input
-
-
-# class TestCase(unittest.TestCase):
-#     def testCase1(self):
-#         self.assertEqual(testMethod(5), 5, "Should be 5")
-#         self.assertEqual(testMethod(10), 100, "Should be 10")
-
-#     def testCase2(self):
-#         assert self.assertEqual(testMethod(
-#             [2, 4]) == 2, True, "Should be True")
-
-
-# unittest.main()
-
+unittest.main()
 
 # """
 # Method                        Equivalent to

@@ -29,10 +29,10 @@ import os
 os.system('clear')
 
 
-def isIsomorphic(s, t):
+def funName(s, t):
     pass
 
-# isIsomorphic('egg', 'add')  # TRUE
-# isIsomorphic('foo', 'bar')  # FALSE
-# isIsomorphic('paper', 'title')  # TRUE
-# isIsomorphic('bdac', 'baba')  # False
+# funName('egg', 'add')  # TRUE
+# funName('foo', 'bar')  # FALSE
+# funName('paper', 'title')  # TRUE
+# funName('bdac', 'baba')  # False
