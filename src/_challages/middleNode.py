@@ -49,6 +49,34 @@ class Solution:
 
         return res
 
+    def middleNode_internet0(self, head):
+        slow = fast = head
+        while (fast and fast.next):
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+
+    def middleNode_internet1(self, head):
+        if (head == None or head.next == None):
+            return head
+
+        h1, h2 = head, head.next
+        while (h2.next != None and h2.next.next != None):
+            h2 = h2.next.next
+            h1 = h1.next
+        return h1.next
+
+    def middleNode_internet2(self, head):
+        pos = {}
+        cur = head
+        i = 1
+        while cur:
+            pos[i] = cur
+            i += 1
+            cur = cur.next
+
+        return pos[math.ceil(i/2)]
+
 
 que = Solution()
 
