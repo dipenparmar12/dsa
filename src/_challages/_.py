@@ -22,18 +22,17 @@ class Solution:
         pass
 
 
-que = Solution()
-
+solution = Solution()
 
 class TestProgram(unittest.TestCase):
     def testCase0(self):
         userInput = [2, 4, 1]
         expected = 2
-        msg = f"Should be {expected} Got: {que.funName(userInput)}"
-        self.assertEqual(que.funName(userInput), expected, msg)
+        msg = f"Should be {expected} Got: {solution.funName(userInput)}"
+        self.assertEqual(solution.funName(userInput), expected, msg)
 
     def testCase2(self):
-        self.assertEqual(que.funName(5), 5, "Should be 5")
+        self.assertEqual(solution.funName(5), 5, "Should be 5")
 
 
 unittest.main()
