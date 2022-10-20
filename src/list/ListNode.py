@@ -15,7 +15,10 @@ class ListNode:
         while current:
             i += 1
             # print(current.data, end=' ')
-            string += str(current.data) + ', '
+            # string += str(current.data) + ', '
+            string += str(current.data) + \
+                f"{' > ' if current.next else '🍔'}".replace("🍔", "\n")
+
             current = current.next
             if self.maxNext == i:
                 break
