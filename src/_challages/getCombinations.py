@@ -54,6 +54,11 @@ def getCombinations(li, arr=False):
             res.append([''.join(map(str, [*prefix, item]))])
 
     print(len(res))
+
+    # print(f"Chars:", "".join(arr), )
+    # print(f"len: ", len(res), )
+    # print(f"=>", res, )
+    # print("="*50)
     return res
 
 

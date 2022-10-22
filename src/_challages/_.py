@@ -24,12 +24,14 @@ class Solution:
 
 solution = Solution()
 
+
 class TestProgram(unittest.TestCase):
     def testCase0(self):
         userInput = [2, 4, 1]
         expected = 2
-        msg = f"Should be {expected} Got: {solution.funName(userInput)}"
-        self.assertEqual(solution.funName(userInput), expected, msg)
+        res = solution.funName(userInput)
+        msg = f"Should be {expected} Got: {res}"
+        self.assertEqual(res, expected, msg)
 
     def testCase2(self):
         self.assertEqual(solution.funName(5), 5, "Should be 5")

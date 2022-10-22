@@ -62,7 +62,7 @@ class SinglyLinkedList:
 
          if i not None
          i=1
-            tempNext    =  next -> 2
+            tempNext    =  i.next -> 2
             i.next(2)   =  Pre  -> None
             pre         =  i    -> 1
             i           =  tempNext -> 2
@@ -70,7 +70,7 @@ class SinglyLinkedList:
             prevList: 1 -> 
             CurrentList: 2 -> 3 -> 4 -> 5 ->     
         i=2
-            tempNext    =  next -> 3
+            tempNext    =  i.next -> 3
             i.next(2)   =  Pre  -> None
             pre         =  i    -> 2
             i           =  tempNext -> 3
@@ -78,7 +78,7 @@ class SinglyLinkedList:
             prevList: 2 -> 1 -> 
             CurrentList: 3 -> 4 -> 5 -> 
         i=3
-            tempNext    =  next -> 4
+            tempNext    =  i.next -> 4
             i.next(3)   =  Pre  -> None
             pre         =  i    -> 3
             i           =  tempNext -> 4
@@ -86,7 +86,7 @@ class SinglyLinkedList:
             prevList: 3 -> 2 -> 1 -> 
             CurrentList: 4 -> 5 -> 
         i=4
-            tempNext    =  next -> null
+            tempNext    =  i.next -> null
             i.next(4)   =  Pre  -> 3
             pre         =  i    -> 4
             i           =  tempNext -> null
@@ -106,8 +106,8 @@ class SinglyLinkedList:
             i_curr.next = prev
             prev = i_curr
             i_curr = tempNext
-            printList(prev, 'prevList:')
-            printList(i_curr, 'CurrentList:')
+            # printList(prev, 'prevList:')
+            # printList(i_curr, 'CurrentList:')
 
         return prev
 
