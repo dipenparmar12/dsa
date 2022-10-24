@@ -4,6 +4,7 @@
   
 
  - `DSA and Codding challenges`
+   - https://github.com/TheAlgorithms/JavaScript
    - https://github.com/trekhleb/javascript-algorithms
    - https://github.com/akueisara/hackerrank
    - https://github.com/RyanFehr/HackerRank
