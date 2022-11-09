@@ -29,7 +29,7 @@
     "lint": "eslint ./src/**",
     "test": "jest",
     "coverage": "npm run test -- --coverage",
-    "format": "prettier --config ./prettier.config.js --write ./src/**/*.{js,jsx} && eslint --fix ./src/**/*.{js,jsx}",
+    "format": "prettier --config ./prettier.config.js --write ./src/**/*.{js,md} && eslint --fix ./src/**/*.{js,md}",
     "temp": "nodemon -q src/temp.js"
   },
   "devDependencies": {
