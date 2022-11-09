@@ -13,12 +13,12 @@ function palindrome(str) {
     // console.log(
     //   char, str[str.length - i - 1], str.length - i - 1, char === str[str.length - i - 1]
     // )
-    return char === str[str.length - i - 1];
-  });
+    return char === str[str.length - i - 1]
+  })
 }
 palindrome('abba')
 
-module.exports = palindrome;
+module.exports = palindrome
 
 // function palindrome(str) {
 //   const reversed = str

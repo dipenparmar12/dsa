@@ -1,7 +1,7 @@
-console.clear();
+console.clear()
 
 const isPalindrome = (str) => {
-  return str.split('').reverse().join('') === str;
-};
+  return str.split('').reverse().join('') === str
+}
 
-module.exports = isPalindrome;
+module.exports = isPalindrome

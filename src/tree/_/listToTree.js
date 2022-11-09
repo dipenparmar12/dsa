@@ -61,7 +61,7 @@ const listToTree = (arr = []) => {
 
 function treeToList(list) {
   const result = []
-  list.forEach(item => {
+  list.forEach((item) => {
     result.push(item)
     if (item.children && item.children.length > 0) {
       result.push(...treeToList(item.children))
@@ -74,6 +74,6 @@ function treeToList(list) {
 }
 
 console.log(JSON.stringify(listToTree(arr), undefined, 2))
-console.log(JSON.stringify(treeToList(listToTree(arr)),null, 2))
+console.log(JSON.stringify(treeToList(listToTree(arr)), null, 2))
 
 console.warn('Done')

@@ -2,7 +2,7 @@ let mlog = (...v) => console.log(...v)
 let br = console.log
 let line = '\n' + Math.floor(Math.random() * 10) + ' ---------'
 
-let selection_sort = arr => {
+let selection_sort = (arr) => {
   min = 0
   for (let i = 0; i < arr.length; i++) {
     for (let j = i; j < arr.length; j++) {

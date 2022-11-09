@@ -1,41 +1,38 @@
 console.clear()
 
 class Node {
-  constructor(value, next = null){
+  constructor(value, next = null) {
     this.data = value
     this.next = next
   }
 }
 
-
 class SinglyLinkedList {
   constructor() {
-      this.head = null;
-      this.tail = null;
+    this.head = null
+    this.tail = null
   }
 
-  push(value){
+  push(value) {
     const node = new Node(value)
     if (this.head == null) {
-        this.head = node;
+      this.head = node
     } else {
-        this.tail.next = node;
+      this.tail.next = node
     }
 
-    this.tail = node;
+    this.tail = node
   }
 
-  print(){
-    let current = this.head 
-    while(current.next){
+  print() {
+    let current = this.head
+    while (current.next) {
       console.log(current)
       current = current.next
     }
     console.log(current)
   }
-
 }
-
 
 linkedList = new SinglyLinkedList()
 linkedList.push(1)

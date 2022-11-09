@@ -33,25 +33,24 @@ Right sum = nums[1] + nums[2] = 1 + -1 = 0
 console.clear()
 
 function pivotIndex(nums) {
-    let sum = nums.reduce((sum, val) => sum += val, 0) 
-    let lSum = 0
+  let sum = nums.reduce((sum, val) => (sum += val), 0)
+  let lSum = 0
 
-    for (const [i, val] of nums.entries()) {
-        if(lSum === sum - lSum - val){ 
-            console.log("Output:", i)
-            return i
-        }
-        lSum = lSum + val
+  for (const [i, val] of nums.entries()) {
+    if (lSum === sum - lSum - val) {
+      console.log('Output:', i)
+      return i
     }
+    lSum = lSum + val
+  }
 
-    console.log("Output:", -1)
-    return -1
+  console.log('Output:', -1)
+  return -1
 }
 
-pivotIndex([6, 4, 7, 3, 11, 4, 1, 15])  //  index: 4
-pivotIndex([2, 1, -1])  //  index: 0
-pivotIndex([1, 2, 3])  //  index: -1
-
+pivotIndex([6, 4, 7, 3, 11, 4, 1, 15]) //  index: 4
+pivotIndex([2, 1, -1]) //  index: 0
+pivotIndex([1, 2, 3]) //  index: -1
 
 // Runtime: 82 ms, faster than 92.10% of JavaScript online submissions for Find Pivot Index.
 // Memory Usage: 46.2 MB, less than 19.30% of JavaScript online submissions for Find Pivot Index.

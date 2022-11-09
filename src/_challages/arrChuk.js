@@ -1,15 +1,15 @@
-console.clear();
+console.clear()
 
 const arrChuk = (arr, chunkSize) => {
-  if (!Array.isArray(arr)) return false; // should be array
-  if (arr.constructor !== [].constructor) return false; // should be array
-  if (!Number.isFinite(chunkSize)) return false; // should be number
-  if (chunkSize < 0) return false; // should be greater then zero
+  if (!Array.isArray(arr)) return false // should be array
+  if (arr.constructor !== [].constructor) return false // should be array
+  if (!Number.isFinite(chunkSize)) return false // should be number
+  if (chunkSize < 0) return false // should be greater then zero
 
-  let output = [];
+  let output = []
   for (let i = 0; i <= arr.length - 1; i += chunkSize) {
-    const arrChunk = arr.slice(i, i + chunkSize);
-    output.push(arrChunk);
+    const arrChunk = arr.slice(i, i + chunkSize)
+    output.push(arrChunk)
   }
 
   // let inx = 0;
@@ -26,12 +26,12 @@ const arrChuk = (arr, chunkSize) => {
   //   }
   // }
 
-  return output;
-};
+  return output
+}
 
-arrChuk([1, 2, 3, 4, 5, 6, 7, 8], 2);
-arrChuk([1, 2, 3, 4, 5, 6, 7, 8], 3);
+arrChuk([1, 2, 3, 4, 5, 6, 7, 8], 2)
+arrChuk([1, 2, 3, 4, 5, 6, 7, 8], 3)
 // arrChuk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 1);
 // arrChuk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 5);
 
-module.exports = arrChuk;
+module.exports = arrChuk

@@ -2,38 +2,33 @@ console.clear()
 console.log(new Date(), '-----------')
 const log = console.log
 
-
 function getCombinations(arr) {
   if (arr.length === 0) return [[]]
 
   const firstEl = arr[0]
   const rest = arr.slice(1)
 
-  const combWithoutFirst  = getCombinations(rest)
+  const combWithoutFirst = getCombinations(rest)
   let combWithFirst = []
-  
-  combWithoutFirst.forEach((comb)=>{
+
+  combWithoutFirst.forEach((comb) => {
     const combWithFirstEl = [...comb, firstEl]
     combWithFirst.push(combWithFirstEl)
   })
 
-  console.log('getCombinations.js::[19] LEN:', [...combWithoutFirst, ...combWithFirst].length)
+  console.log(
+    'getCombinations.js::[19] LEN:',
+    [...combWithoutFirst, ...combWithFirst].length,
+  )
   return [...combWithoutFirst, ...combWithFirst]
-
 }
 
-
 console.log('getCombinations::', getCombinations([]))
-console.log('getCombinations::', getCombinations(['a', ]))
-console.log('getCombinations::', getCombinations(['a', 'b',]))
+console.log('getCombinations::', getCombinations(['a']))
+console.log('getCombinations::', getCombinations(['a', 'b']))
 console.log('getCombinations::', getCombinations(['a', 'b', 'c']))
 console.log('getCombinations::', getCombinations(['a', 'b', 'c', 'd']))
 console.log('getCombinations::', getCombinations(['A', 'B', 'C', 'D', 'E']))
-
-
-
-
-
 
 t = `
 @see: https://codereview.stackexchange.com/questions/7001/generating-all-combinations-of-an-array

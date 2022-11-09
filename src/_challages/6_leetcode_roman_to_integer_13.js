@@ -1,14 +1,26 @@
-let mlog = function log(...v) { console.log(...v) }
+let mlog = function log(...v) {
+  console.log(...v)
+}
 /**
  * @param {string} s
  * @return {number}
  */
 let romanToInt = function (s) {
-  let number = 0; // LVIII
-  let map =
-  {
-    'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000,
-    'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900,
+  let number = 0 // LVIII
+  let map = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+    IV: 4,
+    IX: 9,
+    XL: 40,
+    XC: 90,
+    CD: 400,
+    CM: 900,
   }
 
   while (s.length > 0) {
@@ -24,7 +36,7 @@ let romanToInt = function (s) {
   }
 
   return number
-};
+}
 let xx
 let xxxx
 let xxxxxx
@@ -35,10 +47,6 @@ xxxx = romanToInt('MCDLXXVI') // 1476
 xxxxxx = romanToInt('XCVIII') // 98
 xxxxxxxx = romanToInt('MCMXCIV') // 1994
 
-console.log(xx, xxxx, xxxxxx, xxxxxxxx);
+console.log(xx, xxxx, xxxxxx, xxxxxxxx)
 
-
-
-
-
-module.exports = romanToInt;
+module.exports = romanToInt

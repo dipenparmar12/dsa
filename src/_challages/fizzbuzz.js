@@ -1,29 +1,29 @@
-console.clear();
+console.clear()
 
 const fizzBuzz = (num) => {
-  const fizz = 3;
-  const buzz = 5;
+  const fizz = 3
+  const buzz = 5
 
   for (let i = 1; i <= num; i++) {
     if (i % fizz === 0 && i % buzz === 0) {
-      console.log('fizzbuzz');
+      console.log('fizzbuzz')
     } else if (i % fizz === 0) {
-      console.log('fizz');
+      console.log('fizz')
     } else if (i % buzz === 0) {
-      console.log('buzz');
+      console.log('buzz')
     } else {
-      console.log(i);
+      console.log(i)
     }
   }
-	
+
   // for (var j = 1; j <= num; i++, msg = '') {
   //   if (!(j % 3)) msg += 'Fizz';
   //   if (!(j % 5)) msg += 'Buzz';
   //   console.log(msg || j);
   // }
-};
+}
 
-module.exports = fizzBuzz;
+module.exports = fizzBuzz
 
 // const fizzBuzz = (num) => {
 //   const fizz = 3;

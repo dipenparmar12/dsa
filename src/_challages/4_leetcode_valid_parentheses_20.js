@@ -27,7 +27,9 @@
 // Input: "{[]}"
 // Output: true
 
-let log = function log(...v) { console.log(...v) }
+let log = function log(...v) {
+  console.log(...v)
+}
 /**
  * @param {string}
  * @return {boolean}
@@ -53,8 +55,7 @@ const isValid = function (s = '') {
   }
 
   return false
-
-};
+}
 
 log(isValid('()'))
 log(isValid('[]'))

@@ -44,7 +44,7 @@ function LinkedList() {
       currentNode.next = node
     }
     len++
-    
+
     /*
     
     const newNode = new Node(data)
@@ -60,7 +60,6 @@ function LinkedList() {
     }
     
     */
-
   }
 
   this.remove = function (el) {
@@ -79,7 +78,6 @@ function LinkedList() {
     previosNode.next = currentNode.next
     len--
   }
-  
 }
 
 let myList = new LinkedList()

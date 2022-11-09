@@ -1,4 +1,6 @@
-let log = function log(...v) { console.log(...v) }
+let log = function log(...v) {
+  console.log(...v)
+}
 /**
  * @param {number[]} nums
  * @return {number}
@@ -20,9 +22,7 @@ let removeDuplicates = function (nums) {
   //   }
   // }
   // return j + 1;
-
-};
-
+}
 
 log(removeDuplicates([]))
 log(removeDuplicates([1, 1, 1, 2]))

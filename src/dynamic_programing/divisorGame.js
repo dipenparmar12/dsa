@@ -1,13 +1,13 @@
-console.clear();
+console.clear()
 
 const divisorGame = (n) => {
-  console.log('divisorGame n::', n);
-};
+  console.log('divisorGame n::', n)
+}
 
-divisorGame(3);
-divisorGame(6);
-divisorGame(10);
-divisorGame(30);
+divisorGame(3)
+divisorGame(6)
+divisorGame(10)
+divisorGame(30)
 
-module.exports.divisorGame = divisorGame;
+module.exports.divisorGame = divisorGame
 // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55

@@ -1,13 +1,13 @@
-console.clear();
+console.clear()
 
 const capitalization = (str) => {
-  if (typeof str !== 'string' || str.constructor !== String) return false;
+  if (typeof str !== 'string' || str.constructor !== String) return false
 
   return str
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ');
-};
+    .join(' ')
+}
 
 // capitalization('');
 // capitalization(1);
@@ -17,4 +17,4 @@ const capitalization = (str) => {
 // capitalization('a this is nO where go');
 // capitalization('hi there iTs dipen h');
 
-module.exports = capitalization;
+module.exports = capitalization

@@ -35,5 +35,5 @@ sortBubble([2, 235, 36, 7, 47, 34, 23])
 // sortBubble([7,5,4,2])
 
 // sortBubbleR([7,5,4,2])
-sortBubbleR([5,3,4,1,7,2])
+sortBubbleR([5, 3, 4, 1, 7, 2])
 // sortBubbleR([2, 235, 36, 7, 47, 34, 23])

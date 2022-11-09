@@ -13,19 +13,19 @@
 //   circular(l) // true
 
 function circular(list) {
-  let slow = list.getFirst();
-  let fast = list.getFirst();
+  let slow = list.getFirst()
+  let fast = list.getFirst()
 
   while (fast.next && fast.next.next) {
-    slow = slow.next;
-    fast = fast.next.next;
+    slow = slow.next
+    fast = fast.next.next
 
     if (slow === fast) {
-      return true;
+      return true
     }
   }
 
-  return false;
+  return false
 }
 
-module.exports = circular;
+module.exports = circular

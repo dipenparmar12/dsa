@@ -7,22 +7,22 @@
 
 function validate(node, min = null, max = null) {
   if (max !== null && node.data > max) {
-    return false;
+    return false
   }
 
   if (min !== null && node.data < min) {
-    return false;
+    return false
   }
 
   if (node.left && !validate(node.left, min, node.data)) {
-    return false;
+    return false
   }
 
   if (node.right && !validate(node.right, node.data, max)) {
-    return false;
+    return false
   }
 
-  return true;
+  return true
 }
 
-module.exports = validate;
+module.exports = validate

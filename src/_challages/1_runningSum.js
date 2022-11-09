@@ -27,12 +27,12 @@ Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+
 //     return sumList
 // }
 
-function runningSum(list){
-    for (let i = 1; i < list.length; i++) {
-        list[i] = list[i - 1] + list[i]
-    }
-    console.log("output:", list)
-    return list
+function runningSum(list) {
+  for (let i = 1; i < list.length; i++) {
+    list[i] = list[i - 1] + list[i]
+  }
+  console.log('output:', list)
+  return list
 }
 
 runningSum([2, 3, 4, 5])

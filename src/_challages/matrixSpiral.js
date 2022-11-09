@@ -1,5 +1,5 @@
-console.clear();
-console.log(new Date().toLocaleString('en-IN'), '-------------');
+console.clear()
+console.log(new Date().toLocaleString('en-IN'), '-------------')
 
 const testF = (input) => {
   let m = Array(input)
@@ -8,34 +8,33 @@ const testF = (input) => {
       Array(input)
         .fill('')
         // .map((_, ii) => i + '_' + ii)
-        .map((_, ii) => '')
-    );
+        .map((_, ii) => ''),
+    )
 
-  let top = 0;
-  let bottom = m.length - 1;
-  let left = 0;
-  let right = m.length - 1; // m[0].length - 1;
-  let moveTo = 'right';
-  let counter = 0;
+  let top = 0
+  let bottom = m.length - 1
+  let left = 0
+  let right = m.length - 1 // m[0].length - 1;
+  let moveTo = 'right'
+  let counter = 0
 
   while (top <= bottom && left <= right) {
     switch (moveTo) {
       case 'right':
         for (let i = left; i <= right; i++) {
-          m[top][i] = counter;
-          counter++;
+          m[top][i] = counter
+          counter++
         }
-				top++
-        moveTo = 'down';
+        top++
+        moveTo = 'down'
     }
-
   }
-  console.log(m);
+  console.log(m)
   // console.log(top, bottom, left, right);
-};
+}
 
 // testF(4);
-testF(5);
+testF(5)
 // testF(6);
 
 // 4

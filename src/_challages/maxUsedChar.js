@@ -1,25 +1,25 @@
-console.clear();
+console.clear()
 
 const maxUsedChar = (str) => {
-  str = str.toLowerCase();
+  str = str.toLowerCase()
 
-  let maxChar = '';
-  let maxTimes = 0;
-  let chars = {};
+  let maxChar = ''
+  let maxTimes = 0
+  let chars = {}
 
   for (let char of str) {
-    chars[char] = chars[char] + 1 || 1;
+    chars[char] = chars[char] + 1 || 1
   }
 
   for (let [char, times] of Object.entries(chars)) {
     if (maxTimes <= times) {
-      maxChar = char;
-      maxTimes = times;
+      maxChar = char
+      maxTimes = times
     }
   }
 
-  return maxChar;
-};
+  return maxChar
+}
 
 // maxUsedChar('abc sdd');
 // maxUsedChar('abbceecdddee');
@@ -30,7 +30,7 @@ const maxUsedChar = (str) => {
 // maxUsedChar('oooo');
 // maxUsedChar('1234567890');
 
-module.exports = maxUsedChar;
+module.exports = maxUsedChar
 
 // const s = '😄😅😄😄😅😅😄😄😱😱😄';
 // function getMostFrequentChar(s) {
