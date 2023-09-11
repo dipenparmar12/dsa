@@ -69,3 +69,27 @@ function mergeStrings(word1, word2) {
     42.77MB
     Beats 20.73%of users with JavaScript
 */
+
+
+/*
+
+/**
+
+var mergeAlternately_1 = function(word1, word2) {
+    let i = 0
+    let j =0
+    let arr = []
+    while(i<word1.length && j<word2.length){
+        arr.push(word1[i++])
+        arr.push(word2[j++])
+    }
+    while(i<word1.length){
+        arr.push(word1[i++])
+    }
+    while(j<word2.length){
+        arr.push(word2[j++])
+    }
+    return arr.join("")
+};
+
+*/
